@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import data from './data'
 
 function App() {
   return (
@@ -15,12 +16,20 @@ function App() {
             
         </header>
         <main className="main">
-            <ul>
-                <li> Product 1</li>
-                <li> Product 2</li>
-                <li> Product 3</li>
-                <li> Product 4</li>
-                <li> Product 5</li>
+            <ul class="products">
+                {data.product.map( product => (
+                  <li>
+                  <div class="product"> 
+                   <div class="product-img">
+                     <img src="https://cdn.pixabay.com/photo/2014/05/18/11/26/shoes-346986_1280.jpg" alt="running shoes"></img>
+                   </div>
+                   <div class="product-name"> <a href="#"> {product.name} </a> </div>
+                   <div class="product-brand"> {product.brand} </div>
+                   <div class="product-price"> {product.price} </div>
+                   <div class="product-raiting"> {product.rating}</div>
+                 </div>
+               </li>
+                ))}
             </ul>
         </main>
         <footer className="footer">
