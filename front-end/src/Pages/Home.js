@@ -1,14 +1,27 @@
-import React from 'react'
-import data from '../data'
+import React, { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
+import axios from 'axios'
 
 export default function Home() {
+    const [ products , setProducts ] = useState([])
+    useEffect(() => {
+        const fetchData = async () => {
+           const {data} = await axios.get("/api/products");
+           setProducts(data)
+        }
+        fetchData();
+        return () => {
+            
+        }
+    }, [])
+
     return (
         <div>
             Home Page
         
             <ul className="products">
-                {data.products.map( product => (
+                {/* data file 대신에 이제 서버에서 데이터를 불러옴  */}
+                {products.map( product => (
                   <li key={product.id}>
                   <div className="product"> 
                    <div className="product-img">
