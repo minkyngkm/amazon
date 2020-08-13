@@ -1,13 +1,16 @@
 import React from 'react';
 import './App.css';
-import data from './data'
+import { BrowserRouter, Route, Link} from 'react-router-dom'
+import Home from './Pages/Home';
+import Products from './Pages/Products'
 
 function App() {
   return (
-    <div className="grid-container">
+   <BrowserRouter>
+      <div className="grid-container">
         <header className="header">
             <div className="logo">
-                <a href="index.html">Amazon</a>
+                <Link to="/"> Amazon</Link>
             </div>
             <div className="header-link">
                 <a href="index.html">Cart</a>
@@ -16,26 +19,16 @@ function App() {
             
         </header>
         <main className="main">
-            <ul class="products">
-                {data.product.map( product => (
-                  <li>
-                  <div class="product"> 
-                   <div class="product-img">
-                     <img src="https://cdn.pixabay.com/photo/2014/05/18/11/26/shoes-346986_1280.jpg" alt="running shoes"></img>
-                   </div>
-                   <div class="product-name"> <a href="#"> {product.name} </a> </div>
-                   <div class="product-brand"> {product.brand} </div>
-                   <div class="product-price"> {product.price} </div>
-                   <div class="product-raiting"> {product.rating}</div>
-                 </div>
-               </li>
-                ))}
-            </ul>
+            <Route path="/" exact component={Home}></Route>
+            <Route path="/products/:id" component={Products}></Route>
+            
         </main>
         <footer className="footer">
             All right reserved
         </footer>
     </div>
+    </BrowserRouter>
+
   );
 }
 
