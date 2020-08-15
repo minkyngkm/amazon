@@ -1,24 +1,25 @@
-import React, { useState, useEffect } from 'react'
-import {Link} from 'react-router-dom'
-import axios from 'axios'
+import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { ListProducts } from '../actions/ProductActions'
+import { useSelector, useDispatch } from 'react-redux'
 
-export default function Home() {
-    const [ products , setProducts ] = useState([])
+export default function Home(props) {
+    // const [ products , setProducts ] = useState([])
+    const productList = useSelector(state => state.productList)
+    const { loading, error, products } = productList
+    const dispatch = useDispatch()
     useEffect(() => {
-        const fetchData = async () => {
-           const {data} = await axios.get("/api/products");
-           setProducts(data)
-        }
-        fetchData();
-        return () => {
-            
-        }
-    }, [])
+        dispatch(ListProducts)
+        // const fetchData = async () => {
+        //    const {data} = await axios.get("/api/products");
+        //    setProducts(data)
+        //    reeturn fetchData();
+    }, [dispatch])
 
     return (
+        loading ? <div> Loading </div> : error ? <div> {error} </div> : 
         <div>
             Home Page
-        
             <ul className="products">
                 {/* data file 대신에 이제 서버에서 데이터를 불러옴  */}
                 {products.map( product => (
