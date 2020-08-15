@@ -9,17 +9,20 @@ export default function Home(props) {
     const { loading, error, products } = productList
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(ListProducts)
+        dispatch(ListProducts())
         // const fetchData = async () => {
         //    const {data} = await axios.get("/api/products");
         //    setProducts(data)
         //    reeturn fetchData();
-    }, [dispatch])
+        return () => {
+            //
+        }
+    }, [])
 
     return (
         loading ? <div> Loading </div> : error ? <div> {error} </div> : 
         <div>
-            Home Page
+            This is Home-page
             <ul className="products">
                 {/* data file 대신에 이제 서버에서 데이터를 불러옴  */}
                 {products.map( product => (
