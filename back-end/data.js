@@ -7,6 +7,7 @@ export default {
             brand: "nike",
             price : 100,
             rating: 4.5,
+            countInStock: 0,
             description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
         },
         {   
@@ -16,6 +17,7 @@ export default {
             brand: "nike",
             price : 100,
             rating: 4.5,
+            countInStock: 10,
             description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
         },
         {
@@ -24,6 +26,7 @@ export default {
             image: "https://picsum.photos/200/300?random=3",
             brand: "nike",
             price : 100,
+            countInStock: 3,
             rating: 4.5,
             description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
         },
@@ -34,6 +37,7 @@ export default {
             brand: "nike",
             price : 100,
             rating: 4.5,
+            countInStock: 9,
             description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
         },
         {   
@@ -43,6 +47,7 @@ export default {
             brand: "nike",
             price : 100,
             rating: 4.5,
+            countInStock: 6,
             description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
         },
         {
@@ -51,6 +56,7 @@ export default {
             image: "https://picsum.photos/200/300?random=6",
             brand: "nike",
             price : 100,
+            countInStock: 4,
             rating: 4.5,
             description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
         }

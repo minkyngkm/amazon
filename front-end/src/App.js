@@ -3,6 +3,8 @@ import './App.css';
 import { BrowserRouter, Route, Link} from 'react-router-dom'
 import Home from './Pages/Home';
 import Products from './Pages/Products'
+import Cart from './Pages/Cart';
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
         <main className="main">
             <Route path="/" exact component={Home}></Route>
             <Route path="/products/:id" component={Products}></Route>
+            <Route path="/cart/:id?" component={Cart}></Route>
             
         </main>
         <footer className="footer">

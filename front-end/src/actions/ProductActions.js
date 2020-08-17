@@ -20,4 +20,5 @@ const Detailproducts = (productId) => async ( dispatch ) => {
         dispatch( {type: PRODUCT_DETAILS_FAIL, payload: error.message })
     }
 }
+
 export { ListProducts, Detailproducts }
